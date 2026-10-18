@@ -128,6 +128,12 @@ Canonical SQL: `supabase/migrations/0001_init.sql`. Storage buckets `model-photo
 
 Enable row-level security on every table. `profiles` is keyed by `user_id` (from Supabase anonymous sign-in); other user-owned tables check ownership through `profile_id → profiles.user_id`. `garments` is a shared catalog: public read, service-role writes. See decisions in `build-plan.md`.
 
+## Client figure session
+
+The demo figure does not require Supabase. `apps/web/lib/store/figure-store.ts` persists a versioned session in `localStorage` under `fitmirror-figure-v1`. The session holds a `BodyReconstruction`, the worn garments, saved outfits, and chrome (dismiss, minimize, corner, anchor). Invalid payloads are dropped. The original photograph is not stored.
+
+Normalized body space and the retailer-agnostic catalog types live in `packages/shared`. See `docs/figure-contracts.md`. Garment overlays are schematic unless a product has a separate transparent try-on asset. The fit verdict still comes only from the fit engine.
+
 ## Key shared types
 
 ```ts

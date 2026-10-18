@@ -18,6 +18,12 @@ Spec section 11.
 
 `FigureViewport`, `FitPanel`, `SizePicker`, `OutfitTray`, `ImportDialog`, `CompareGrid`, `CartByRetailer`, `MeasurementEditor`, `ConfidenceBadge`.
 
+## Persistent figure
+
+A client figure card stays fixed to a corner on every route (`PersistentFigure` in the root layout). It renders the 2D silhouette at the photo's aspect ratio and stacks schematic garment overlays in normalized body space. The card is the only hit target; the rest of the viewport ignores pointer events from the figure layer.
+
+Dismiss hides the card and keeps the reconstruction and outfit so Restore can bring them back. Clear deletes the reconstruction and the clothes on it. Saved outfits stay. Minimize collapses the card to a chip. Dragging sets an anchor that overrides the corner preset until a corner is chosen again.
+
 ## State
 
 - Zustand for the studio session (including the outfit store with undo history).

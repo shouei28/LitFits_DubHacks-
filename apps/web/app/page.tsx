@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-const routes = ['/studio', '/onboarding', '/compare', '/checkout', '/embed'] as const;
+const routes = ['/studio', '/shop', '/onboarding', '/compare', '/checkout', '/embed'] as const;
 
 export default function Home() {
   return (
