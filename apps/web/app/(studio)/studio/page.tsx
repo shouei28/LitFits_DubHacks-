@@ -1,5 +1,5 @@
-import { PlaceholderPage } from '@/components/placeholder-page';
+import { StudioScreen } from '@/components/figure/StudioScreen';
 
 export default function StudioPage() {
-  return <PlaceholderPage title="Studio" milestone="M1" />;
+  return <StudioScreen />;
 }

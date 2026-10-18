@@ -2,7 +2,8 @@
 
 Shared by `apps/web` and `apps/extension`: types, zod schemas, fit engine, fit rules, unit conversion, measurement math.
 
-- `schemas.ts` is canonical; `types.ts` only infers from it.
+- `schemas.ts` is canonical for garments, profiles, and fit; `types.ts` only infers from it.
+- Figure reconstruction, catalog products, and the persisted figure session live in `reconstruction.ts`, `catalog.ts`, `figure-session.ts`, `placement.ts`, and `schematic.ts`. See `docs/figure-contracts.md`.
 - `dims.ts` is the only place profile measurement keys map to chart dims. Use `bodyCmForDim`, never hard-code the mapping.
 
 Before changing the fit engine, read `docs/fit-engine.md`. Before changing measurement estimation, read `docs/measurement.md`.
